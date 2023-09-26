@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+ <meta charset="UTF-8">
+ <meta name="author" content="Ghica van Emde Boas">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+body {
+    text-align: justify;
+    text-justify: inter-word;
+	
+
+}
+	<strong>
+
+.arab1a {
+    direction: rtl;
+	font-family: quran;
+    font-size: 23px;
+	font-weight: bold;
+
+		
+	}
+.arab1b {
+    direction: rtl;
+	font-family: quran2;
+    font-size: 23px;
+	
+	font-weight: bold;
+	
+	}
+	
+.highlight {
+    background-color:#b9d5da; 
+}	
+
+.div_style_block {
+	text-align: center;
+	border-bottom-style: solid; border-bottom-color: #00b4b4d5;
+}
+
+.bg_green {
+	background-color:#ffffffff;
+}
+
+.bg_grey {
+	background-color:#ffffffff;
+}
+
+.div_style_inline {
+    display: inline;
+}
+	
+</style>
+<script>
+
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+	
+}
+
+</script>
+</strong>
+</head>
+<body>
+
+<script>
+document.write(window.AppInventor.getWebViewString().split(" || ")[0]);
+document.getElementById("myText").style.fontSize = window.AppInventor.getWebViewString().split(" || ")[1];
+smoothScroll(document.getElementById('anchor'));
+</script>
+
+<script>
+window.setInterval(function(){
+  if (window.AppInventor.getWebViewString() == "plus" ) {
+  resizeText(1);
+  window.AppInventor.setWebViewString(document.getElementById("myText").style.fontSize);
+  }
+  else if (window.AppInventor.getWebViewString() == "minus" )  {
+  resizeText(-1);
+  window.AppInventor.setWebViewString(document.getElementById("myText").style.fontSize);
+  }
+  }, 500);
+	
+function resizeText(multiplier) {
+  if (document.getElementById("myText").style.fontSize == "") {
+    document.getElementById("myText").style.fontSize = "21px";
+  }
+  document.getElementById("myText").style.fontSize = parseFloat(document.getElementById("myText").style.fontSize) + (multiplier * 4.0) + "px";
+}
+</script>
+</script>
+
+</body>
+<script>
+var buttons = "ON";
+window.onclick = myFunction;
+	
+function myFunction() {
+
+  if (  buttons ==  "ON" ) {
+  buttons = "OFF";
+  window.AppInventor.setWebViewString("OFF");
+} else {
+  buttons = "ON";
+  window.AppInventor.setWebViewString("ON");
+}
+}
+</script>
+</html>
